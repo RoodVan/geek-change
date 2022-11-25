@@ -1,5 +1,5 @@
 {
-  "name": "biz4sale",
+  "name": "GeekChange",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -23,5 +23,8 @@
     "gulp-rsync": "0.0.9",
     "gulp-sass": "^4.1.0",
     "gulp-uglify-es": "^2.0.0"
+  },
+  "dependencies": {
+    "tippy.js": "^6.3.7"
   }
 }
