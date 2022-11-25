@@ -1,0 +1,237 @@
+$flaticon_geekchange-font: "flaticon_geekchange";
+
+@font-face {
+    font-family: $flaticon_geekchange-font;
+    src: url("../fonts/flaticon/flaticon_geekchange.ttf?1a5c79b99ef06a2a32bc335c8eda2b3d") format("truetype"),
+url("../fonts/flaticon/flaticon_geekchange.woff?1a5c79b99ef06a2a32bc335c8eda2b3d") format("woff"),
+url("../fonts/flaticon/flaticon_geekchange.woff2?1a5c79b99ef06a2a32bc335c8eda2b3d") format("woff2"),
+url("../fonts/flaticon/flaticon_geekchange.eot?1a5c79b99ef06a2a32bc335c8eda2b3d#iefix") format("embedded-opentype"),
+url("../fonts/flaticon/flaticon_geekchange.svg?1a5c79b99ef06a2a32bc335c8eda2b3d#flaticon_geekchange") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_geekchange !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon_geekchange-map: (
+    "email": "\f101",
+    "forward": "\f102",
+    "setting": "\f103",
+    "user-friend": "\f104",
+    "user-group": "\f105",
+    "user-add": "\f106",
+    "user": "\f107",
+    "add": "\f108",
+    "faq": "\f109",
+    "rocket": "\f10a",
+    "blockchain": "\f10b",
+    "arr-down": "\f10c",
+    "arr-right": "\f10d",
+    "arr-left": "\f10e",
+    "arr-up": "\f10f",
+    "reload": "\f110",
+    "check": "\f111",
+    "lock": "\f112",
+    "unlock": "\f113",
+    "faq-1": "\f114",
+    "trash": "\f115",
+    "chat": "\f116",
+    "cancel": "\f117",
+    "copy": "\f118",
+    "heart": "\f119",
+    "star-0": "\f11a",
+    "wallet": "\f11b",
+    "faq-plus": "\f11c",
+    "faq-minus": "\f11d",
+    "arrow-history": "\f11e",
+    "star-1": "\f11f",
+    "soc-tg": "\f120",
+    "soc-vk": "\f121",
+    "soc-ig": "\f122",
+    "at": "\f123",
+    "captcha": "\f124",
+    "close": "\f125",
+    "bitcoin": "\f126",
+    "money": "\f127",
+    "soc-fb": "\f128",
+    "soc-tw": "\f129",
+    "attachment": "\f12a",
+    "menu": "\f12b",
+    "wait": "\f12c",
+    "search": "\f12d",
+    "link": "\f12e",
+    "shield": "\f12f",
+    "diamond": "\f130",
+    "upload": "\f131",
+    "google": "\f132",
+    "history": "\f133",
+    "logout": "\f134",
+    "csv": "\f135",
+);
+
+.flaticon-email:before {
+    content: map-get($flaticon_geekchange-map, "email");
+}
+.flaticon-forward:before {
+    content: map-get($flaticon_geekchange-map, "forward");
+}
+.flaticon-setting:before {
+    content: map-get($flaticon_geekchange-map, "setting");
+}
+.flaticon-user-friend:before {
+    content: map-get($flaticon_geekchange-map, "user-friend");
+}
+.flaticon-user-group:before {
+    content: map-get($flaticon_geekchange-map, "user-group");
+}
+.flaticon-user-add:before {
+    content: map-get($flaticon_geekchange-map, "user-add");
+}
+.flaticon-user:before {
+    content: map-get($flaticon_geekchange-map, "user");
+}
+.flaticon-add:before {
+    content: map-get($flaticon_geekchange-map, "add");
+}
+.flaticon-faq:before {
+    content: map-get($flaticon_geekchange-map, "faq");
+}
+.flaticon-rocket:before {
+    content: map-get($flaticon_geekchange-map, "rocket");
+}
+.flaticon-blockchain:before {
+    content: map-get($flaticon_geekchange-map, "blockchain");
+}
+.flaticon-arr-down:before {
+    content: map-get($flaticon_geekchange-map, "arr-down");
+}
+.flaticon-arr-right:before {
+    content: map-get($flaticon_geekchange-map, "arr-right");
+}
+.flaticon-arr-left:before {
+    content: map-get($flaticon_geekchange-map, "arr-left");
+}
+.flaticon-arr-up:before {
+    content: map-get($flaticon_geekchange-map, "arr-up");
+}
+.flaticon-reload:before {
+    content: map-get($flaticon_geekchange-map, "reload");
+}
+.flaticon-check:before {
+    content: map-get($flaticon_geekchange-map, "check");
+}
+.flaticon-lock:before {
+    content: map-get($flaticon_geekchange-map, "lock");
+}
+.flaticon-unlock:before {
+    content: map-get($flaticon_geekchange-map, "unlock");
+}
+.flaticon-faq-1:before {
+    content: map-get($flaticon_geekchange-map, "faq-1");
+}
+.flaticon-trash:before {
+    content: map-get($flaticon_geekchange-map, "trash");
+}
+.flaticon-chat:before {
+    content: map-get($flaticon_geekchange-map, "chat");
+}
+.flaticon-cancel:before {
+    content: map-get($flaticon_geekchange-map, "cancel");
+}
+.flaticon-copy:before {
+    content: map-get($flaticon_geekchange-map, "copy");
+}
+.flaticon-heart:before {
+    content: map-get($flaticon_geekchange-map, "heart");
+}
+.flaticon-star-0:before {
+    content: map-get($flaticon_geekchange-map, "star-0");
+}
+.flaticon-wallet:before {
+    content: map-get($flaticon_geekchange-map, "wallet");
+}
+.flaticon-faq-plus:before {
+    content: map-get($flaticon_geekchange-map, "faq-plus");
+}
+.flaticon-faq-minus:before {
+    content: map-get($flaticon_geekchange-map, "faq-minus");
+}
+.flaticon-arrow-history:before {
+    content: map-get($flaticon_geekchange-map, "arrow-history");
+}
+.flaticon-star-1:before {
+    content: map-get($flaticon_geekchange-map, "star-1");
+}
+.flaticon-soc-tg:before {
+    content: map-get($flaticon_geekchange-map, "soc-tg");
+}
+.flaticon-soc-vk:before {
+    content: map-get($flaticon_geekchange-map, "soc-vk");
+}
+.flaticon-soc-ig:before {
+    content: map-get($flaticon_geekchange-map, "soc-ig");
+}
+.flaticon-at:before {
+    content: map-get($flaticon_geekchange-map, "at");
+}
+.flaticon-captcha:before {
+    content: map-get($flaticon_geekchange-map, "captcha");
+}
+.flaticon-close:before {
+    content: map-get($flaticon_geekchange-map, "close");
+}
+.flaticon-bitcoin:before {
+    content: map-get($flaticon_geekchange-map, "bitcoin");
+}
+.flaticon-money:before {
+    content: map-get($flaticon_geekchange-map, "money");
+}
+.flaticon-soc-fb:before {
+    content: map-get($flaticon_geekchange-map, "soc-fb");
+}
+.flaticon-soc-tw:before {
+    content: map-get($flaticon_geekchange-map, "soc-tw");
+}
+.flaticon-attachment:before {
+    content: map-get($flaticon_geekchange-map, "attachment");
+}
+.flaticon-menu:before {
+    content: map-get($flaticon_geekchange-map, "menu");
+}
+.flaticon-wait:before {
+    content: map-get($flaticon_geekchange-map, "wait");
+}
+.flaticon-search:before {
+    content: map-get($flaticon_geekchange-map, "search");
+}
+.flaticon-link:before {
+    content: map-get($flaticon_geekchange-map, "link");
+}
+.flaticon-shield:before {
+    content: map-get($flaticon_geekchange-map, "shield");
+}
+.flaticon-diamond:before {
+    content: map-get($flaticon_geekchange-map, "diamond");
+}
+.flaticon-upload:before {
+    content: map-get($flaticon_geekchange-map, "upload");
+}
+.flaticon-google:before {
+    content: map-get($flaticon_geekchange-map, "google");
+}
+.flaticon-history:before {
+    content: map-get($flaticon_geekchange-map, "history");
+}
+.flaticon-logout:before {
+    content: map-get($flaticon_geekchange-map, "logout");
+}
+.flaticon-csv:before {
+    content: map-get($flaticon_geekchange-map, "csv");
+}
