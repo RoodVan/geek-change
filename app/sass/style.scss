@@ -115,6 +115,14 @@ $hover-color: #8686EA;
 				background: #A4A4F8;
 			}
 		}
+
+		&--red{
+			width: 100%;
+			background: #EC5F40;
+			&:hover{
+				background: #FC7C5F;
+			}
+		}
 		
 		&--mblue{
 			width: 100%;
@@ -293,6 +301,19 @@ $hover-color: #8686EA;
 		&-gray{
 			color: #727A8D !important;
 		}
+		&-gray3{
+			color: #AEB6C9 !important;
+		}
+		&-red{
+			color: #EC5F40 !important;
+		}
+		&-blue{
+			color: #8686EA !important;
+		}
+	}
+
+	.line-through{
+		text-decoration: line-through;
 	}
 	
 	.addPlus{
@@ -586,7 +607,7 @@ $hover-color: #8686EA;
 		&__avatar{
 			width: 40px;
 			height: 40px;
-			background: #CED3DE;
+			background: #121620;
 			border-radius: 100%;
 			overflow: hidden;
 			margin-right: 10px;
@@ -597,7 +618,7 @@ $hover-color: #8686EA;
 			font-weight: 700;
 			font-size: 16px;
 			line-height: 20px;
-			color: #121620;
+			color: #FEFEFE;
 			img{
 				width: 100%;
 				height: auto;
@@ -608,7 +629,6 @@ $hover-color: #8686EA;
 			flex-direction: column;
 			flex: 0 0 100px;
 			max-width: 100px;
-			color: #121620;
 			strong{
 				font-weight: 700;
 				font-size: 16px;

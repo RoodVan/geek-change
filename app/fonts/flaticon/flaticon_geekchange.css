@@ -1,10 +1,10 @@
 @font-face {
     font-family: "flaticon_geekchange";
-    src: url("./flaticon_geekchange.ttf?1b07e10c840e84729cbe5a1322a2947c") format("truetype"),
-url("./flaticon_geekchange.woff?1b07e10c840e84729cbe5a1322a2947c") format("woff"),
-url("./flaticon_geekchange.woff2?1b07e10c840e84729cbe5a1322a2947c") format("woff2"),
-url("./flaticon_geekchange.eot?1b07e10c840e84729cbe5a1322a2947c#iefix") format("embedded-opentype"),
-url("./flaticon_geekchange.svg?1b07e10c840e84729cbe5a1322a2947c#flaticon_geekchange") format("svg");
+    src: url("./flaticon_geekchange.ttf?41eefb0c4ac1e1dc54f05bd89c019727") format("truetype"),
+url("./flaticon_geekchange.woff?41eefb0c4ac1e1dc54f05bd89c019727") format("woff"),
+url("./flaticon_geekchange.woff2?41eefb0c4ac1e1dc54f05bd89c019727") format("woff2"),
+url("./flaticon_geekchange.eot?41eefb0c4ac1e1dc54f05bd89c019727#iefix") format("embedded-opentype"),
+url("./flaticon_geekchange.svg?41eefb0c4ac1e1dc54f05bd89c019727#flaticon_geekchange") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -176,4 +176,16 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
 }
 .flaticon-csv:before {
     content: "\f135";
+}
+.flaticon-info:before {
+    content: "\f136";
+}
+.flaticon-warning:before {
+    content: "\f137";
+}
+.flaticon-check-2:before {
+    content: "\f138";
+}
+.flaticon-canceled:before {
+    content: "\f139";
 }

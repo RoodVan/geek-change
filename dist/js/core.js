@@ -559,16 +559,22 @@ function xupload(selector, options){
 
 
 //Copy text
-function copyText(input,text) {
+function copyText(input,text,flag=false) {
 	// Get the text field
-	var copyText = document.querySelector(input);
+	const copyText = document.querySelector(input);
+	let textValue;
   
-	// Select the text field
-	copyText.select();
-	copyText.setSelectionRange(0, 99999); // For mobile devices
+	// if input element
+	if(!flag){
+		copyText.select();
+		copyText.setSelectionRange(0, 99999); // For mobile devices
+		textValue = copyText.value;
+	} else {
+		textValue = copyText.innerText;
+	}
   
 	 // Copy the text inside the text field
-	navigator.clipboard.writeText(copyText.value);
+	navigator.clipboard.writeText(textValue);
   
 	// Alert the copied text
 	alerx(`${text} 👍`, '', 'info');
@@ -746,7 +752,7 @@ $(function(){
 			$(this).parent("li").remove();
 		});	
 	}
-	//call upload
+	//call chat upload
 	xupload("#chat-file-inp", {
 		trigger: "#chat-upl",
 		multi  : true,
@@ -805,6 +811,21 @@ $(function(){
 				showBox($($(this).attr("href")), hasFlex);
 			});
 		});
+	});
+
+
+
+	//Userpic file render
+	const renderUserpicFiles = function(file){
+		$("#upload-userpic").val(file.name);
+	}
+
+	//call userpic upload
+	xupload("#file-upload-userpic", {
+		trigger: "#upload-userpic",
+		multi  : false,
+		accept : [".png",".jpg",".jpeg",".gif"],
+		cb 	   : function(file) { renderUserpicFiles(file); }
 	});
 
 	

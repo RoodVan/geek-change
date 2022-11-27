@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Geek Change</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+	
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.min.css?v=0.1">
+
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="topline container">
+				
+				<div class="logo">
+					<a href="#" class="logo__icon">
+						<img src="img/logo.svg" alt="" />
+					</a>
+					<div class="logo__txt">
+						Think different. Think Crypto.<br/>
+						Fast exchange with 24/7 support.
+					</div>
+				</div>
+				
+				<button class="btn menu__mob js-menu-mob">
+					<i class="flaticon-menu menu__icon-open"></i>
+					<i class="flaticon-close menu__icon-close"></i>
+				</button>
+				
+				<nav class="menu">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="#">About us</a>
+						</li>
+						<li class="menu__item">
+							<a href="#">Reviews</a>
+						</li>
+						<li class="menu__item">
+							<a href="#">Blog</a>
+						</li>
+						<li class="menu__item">
+							<a href="#">Partners</a>
+						</li>
+						<li class="menu__item">
+							<a href="#">Help</a>
+						</li>
+						<li class="menu__item">
+							<a href="#">Support</a>
+						</li>
+						<li class="menu__item--copy">
+							Think different. Think Crypto.<br/>&copy; 2022-2023 Geekchange. 
+						</li>					
+					</ul>
+				</nav>
+
+				<div class="userbox">
+					<a href="#" class="_link text-hide">&nbsp;</a>
+					<div class="userbox__avatar">M</div>
+					<div class="userbox__info">
+						<strong>My Account</strong>
+						<span>manager@perfecto.web</span>
+					</div>
+				</div>
+				
+			</div>
+		</header>
+		<!-- ./ header -->
+		
+		<main class="main-inner">
+			<div class="container scontent">
+				<div class="payment-title">
+					<h1 class="stitle">Exchange <strong>Ethereum (ETH)</strong> to <strong>Tether (USDT)</strong></h1>
+					<p class="color-gray">Created 11 Feb 2023, 13:51. Please note that you can send funds to the address above only once.</p>
+				</div>
+
+				<div class="payment-row">
+					<div class="payment-left">
+						<div class="payment-box">
+							<div class="payment-box__head">
+								<h3 class="t">Awaiting Deposit</h3>
+								<p class="i">
+									<span class="t1">Transaction ID:</span>
+									<span class="t2 js-copy-id">c0878163-2896-4d62-aac5-5d5420e6c4bd</span>
+									<i class="flaticon-copy" onclick="copyText('.js-copy-id', 'Copied', 1)"></i>
+								</p>
+							</div>
+
+							<div class="payment-box__body">
+
+								<div class="payment-info space">
+									<ul class="payment-pilist">
+										<li>
+											<span class="l">Send in a single transaction:</span>
+											<span class="v">1.2 ETH</span>
+											<i class="flaticon-copy"></i>
+										</li>
+										<li>
+											<span class="l">To this address:</span>
+											<span class="v">0x62ef7a17A002581463dEFd6782Ad7728e1b1B64F</span>
+											<i class="flaticon-copy"></i>
+										</li>
+										<li>
+											<span class="l">Network:</span>
+											<span class="v"><b class="xmark">ERC20</b></span>
+										</li>
+									</ul>
+									<div class="payment-piqrcode">
+										<img src="img/qrcode.jpg" alt="qrcode">
+									</div>
+								</div>
+
+								<div class="payment-note">
+									<i class="flaticon-info"></i>
+									Send the exact amount without commission. Otherwise, the payment can hang for a long time. We will swap them really fast and at the Best Rate!
+								</div>
+
+								<div class="payment-info small">
+									<ul class="payment-pilist">
+										<li>
+											<span class="l">You will receive:</span>
+											<span class="v">1 784.33 USDT</span>
+											<i class="flaticon-warning" data-tippy-content="
+											<p>Изначальный курс: <strong class='color-green'>1 ETH : 1500 USDT</strong></p>
+											<p>Скорректированный курс: <strong class='color-green'>1 ETH : 1560 USDT</strong></p>
+											<p>Время обновления: 11 Feb 2023, 14:05</p>
+											<p>----</p>
+											<p>Так как вы выбрали тип обмена “Лучший курс”, то курс в заявке обновляется раз в 5 минут при сильных колебаниях на рынке.</p>
+											"></i>
+										</li>
+										<li>
+											<span class="l">Your address:</span>
+											<span class="v">TEaC4TeFYLWYTsVaeMBG4GEz2MPmJ4eN43</span>
+										</li>
+										<li>
+											<span class="l">Your network:</span>
+											<span class="v"><b class="xmark">TRC20</b></span>
+										</li>
+									</ul>
+								</div>
+
+							</div>
+							<!-- ./ payment-box__body -->
+
+							<div class="payment-box__foot">
+								foot
+							</div>
+
+						</div>
+					</div>
+					<!-- ./ payment-left -->
+
+					<div class="payment-right">
+
+						<div class="timer-box">
+							<div class="tick" data-did-init="handleTickInit">
+								<div data-repeat="true" data-layout="horizontal center fit" data-transform="preset(d, h, m, s) -> delay">							
+									<div class="tick-group">									
+										<div data-key="value" data-repeat="true" data-transform="pad(00) -> split -> delay">
+											<span data-view="flip"></span>
+										</div>							
+									</div>
+								</div>
+							</div>							
+							<div class="timer-box__label">
+								Time left to send 1.2 ETH
+							</div>
+						</div>
+
+						<div class="pminfo">
+							<div class="pminfo-item">
+								<div class="l">Status <i class="flaticon-faq-1" data-tippy-content="Status"></i></div>
+								<div class="r">Waiting payment</div>
+							</div>
+							<div class="pminfo-item">
+								<div class="l">Transaction type <i class="flaticon-faq-1" data-tippy-content="Transaction type"></i></div>
+								<div class="r">Float rate</div>
+							</div>
+							<div class="pminfo-item">
+								<div class="l">Transaction time <i class="flaticon-faq-1" data-tippy-content="Transaction time"></i></div>
+								<div class="r">~5-60 minutes</div>
+							</div>
+						</div>
+
+						<div class="bxnote">
+							<div class="bxnote-title">Please note!</div>
+							<ul class="bxnote-list">
+								<li>Do not pay before the timer expires because the wallet will be deleted!</li>
+								<li>Making an exchange operation you agree to the <a href="#">User Agreement</a> and <a href="#">AML/KYC</a>.</li>
+								<li>Please send with <strong>high priority</strong> network fee to receive your coins instantly.
+									<i class="flaticon-faq-1" data-tippy-content="
+									<p>High priority: <strong class='color-green'>67 gewi</strong></p>
+									<p>Medium priority: <strong class='color-blue'>53 gewi</strong></p>
+									<p>Low priority: <strong class='color-red'>14.3 gewi</strong></p>
+									"></i>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+					<!-- ./ payment-right -->
+				</div>
+
+			</div>
+		</main>
+		<!-- ./ main -->
+		
+		<footer class="footer">
+			<div class="container">
+				
+				<div class="ftline">
+					<div class="ftline__left">
+						<div class="ftline__txt">
+							More reviews about<br/> Geekchange
+						</div>
+						
+						<ul class="ftline__slist">
+							<li class="ftline__sitem">
+								<a href="#"><img src="img/ic-bestchange.svg" alt="" /></a>
+							</li>
+							<li class="ftline__sitem">
+								<a href="#"><img src="img/ic-exchangesumo.svg" alt="" /></a>
+							</li>
+							<li class="ftline__sitem">
+								<a href="#"><img src="img/ic-exnode.svg" alt="" /></a>
+							</li>
+						</ul>
+					</div>
+					
+					<div class="ftline__right">
+						<div class="ftrev">
+							<div class="ftrev__t1">Over <strong>1,790</strong> positive feedbacks</div>
+							<div class="ftrev__t2">
+								<a href="#">Read more</a>
+								<div class="rwstars">
+									<i class="flaticon-star-1"></i>
+									<i class="flaticon-star-1"></i>
+									<i class="flaticon-star-1"></i>
+									<i class="flaticon-star-1"></i>
+									<i class="flaticon-star-1"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- ./ ftline -->
+				
+				<div class="ftmid">
+					<div class="ftmid__info">
+						<div class="ftmid__logo">
+							<a href="#"><img src="img/ft-logo.svg" alt="" /></a>
+						</div>
+						<div class="ftmid__txt">
+							Since 2022, Geeckchange has been providing an intuitive platform for fast crypto exchanges. With us you can buy cryptocurrency in a couple of clicks at a favorable rate and with a guarantee. What do you say, Elon Musk?
+						</div>
+					</div>
+					
+					<div class="ftnav">
+						<ul class="ftnav__list">
+							<li class="ftnav__cap">Company</li>
+							<li class="ftnav__link">
+								<a href="#">About us</a>
+							</li>
+							<li class="ftnav__link">
+								<a href="#">Reviews</a>
+							</li>
+							<li class="ftnav__link">
+								<a href="#">Directions</a>
+							</li>
+							<li class="ftnav__link">
+								<a href="#">Reserves</a>
+							</li>
+						</ul>
+						
+						<ul class="ftnav__list">
+							<li class="ftnav__cap">For Partners</li>
+							<li class="ftnav__link">
+								<a href="#">Affiliate Program</a>
+							</li>
+							<li class="ftnav__link">
+								<a href="#">Bonus System</a>
+							</li>
+							<li class="ftnav__link">
+								<a href="#">Giveaways</a>
+							</li>
+						</ul>
+						
+						<ul class="ftnav__list">
+							<li class="ftnav__cap">Support</li>
+							<li class="ftnav__link">
+								<a href="#">FAQ</a>
+							</li>
+							<li class="ftnav__link">
+								<a href="#">Blog</a>
+							</li>
+							<li class="ftnav__link">
+								<a href="#">Contact us</a>
+							</li>
+						</ul>
+						
+						<ul class="ftnav__list">
+							<li class="ftnav__cap">Legal</li>
+							<li class="ftnav__link">
+								<a href="#">Terms of Use</a>
+							</li>
+							<li class="ftnav__link">
+								<a href="#">Privacy Policy</a>
+							</li>
+							<li class="ftnav__link">
+								<a href="#">AML/KYC</a>
+							</li>
+							<li class="ftnav__link">
+								<a href="#">Proof of Funds</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- ./ ftmid -->
+				
+				<div class="ftfoot">
+					
+					<button class="btn lang-btn" onclick="popup.open('#popup-langs');">
+						<img src="img/f-en.svg" class="lang-f" alt="en" />
+						<span class="lang-n">EN</span>
+						<i class="flaticon-arr-down"></i>
+					</button>
+					
+					<ul class="fsocs">
+						<li class="fsocs__item">
+							<a href="#" class="fsocs__link fsocs__link--tg"><i class="flaticon-soc-tg"></i></a>
+						</li>
+						<li class="fsocs__item">
+							<a href="#" class="fsocs__link fsocs__link--vk"><i class="flaticon-soc-vk"></i></a>
+						</li>
+						<li class="fsocs__item">
+							<a href="#" class="fsocs__link fsocs__link--ig"><i class="flaticon-soc-ig"></i></a>
+						</li>
+					</ul>
+					
+					<div class="copyright">
+						&copy; 2022-2023 Geekchange. <br/>
+						Powered by <a href="#">Perfecto Web</a>
+					</div>
+				</div>
+				<!-- . / ftfoot -->
+				
+			</div>
+		</footer>
+		<!-- ./ footer -->
+	</div>
+	<!-- ./ wrapper -->
+	
+	<!-- POPUPS BEGIN -->
+	
+	<div class="popup" id="popup-signup">
+		<div class="popup__container popup-signup">
+			<div class="popup__body">	
+				<button type="button" class="btn popup-close" onclick="popup.close('#popup-signup');"><i class="flaticon-close"></i></button>
+				
+				<div class="popup__title">Registration</div>
+				<div class="popup__subtitle">Create an account and start saving on exchange with our partnership program</div>
+				
+				<div class="popup__form">
+					<div class="popup__fields">
+						<div class="popup__inp">
+							<i class="flaticon-at"></i>
+							<input type="email" class="inp" placeholder="Your E-mail" />
+						</div>
+					</div>
+					
+					<div class="popup__fields">
+						<div class="popup__inp">
+							<i class="flaticon-user-add"></i>
+							<input type="text" class="inp inp--err" value="dx" placeholder="Your Username" />
+						</div>
+						<span class="ierror">Username must be at least 3 characters</span>
+					</div>
+					
+					<div class="popup__fields">
+						<div class="popup__inp">
+							<i class="flaticon-lock"></i>
+							<input type="password" class="inp" placeholder="Password" />
+						</div>
+					</div>
+					
+					<div class="popup__fields">
+						<div class="popup__inp popup__inp--captcha">
+							<i class="flaticon-captcha"></i>
+							<input type="text" class="inp" placeholder="Enter captcha" />
+							<img src="img/content/captcha.png" class="captcha" alt="" />
+						</div>
+					</div>
+					
+					<div class="popup__btn">
+						<div class="loading loading--dark"></div>
+						<button type="button" class="btn btn--green" onclick="$(this).siblings().fadeIn(100);">Create Account</button>
+					</div>
+					
+					<label class="popup__check checkbox bounce">
+						<span class="checkbox__in">	
+					        <input type="checkbox" checked>
+							<svg viewBox="0 0 24 24">
+					            <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+					        </svg>
+					    </span>    
+				        <p class="t">By creating an account, you agree with our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></p>
+				    </label>	
+				</div>
+			</div>
+			<div class="popup__foot">
+				Already have an account? <a href="javascript:popup.open('#popup-signin')">Login</a>
+			</div>
+		</div>
+		<div class="popup__overlay"></div>
+	</div>
+	<!-- ./ popup-signup -->
+	
+	
+	<div class="popup" id="popup-signin">
+		<div class="popup__container popup-signin">
+			<div class="popup__body">	
+				<button type="button" class="btn popup-close" onclick="popup.close('#popup-signin');"><i class="flaticon-close"></i></button>
+				
+				<div class="popup__title">Login</div>
+				
+				<div class="popup__form">
+					<div class="popup__fields">
+						<div class="popup__inp">
+							<i class="flaticon-at"></i>
+							<input type="email" class="inp" placeholder="Email or Username" />
+						</div>
+					</div>
+					
+					<div class="popup__fields">
+						<div class="popup__inp">
+							<i class="flaticon-lock"></i>
+							<input type="password" class="inp" placeholder="Password" />
+						</div>
+						<div class="popup__flink">
+							<a href="javascript:popup.open('#popup-forgot');">Forgot password?</a>
+						</div>
+					</div>
+					
+					<div class="popup__btn">
+						<div class="loading loading--dark"></div>
+						<button type="button" class="btn btn--blue" onclick="$(this).siblings().fadeIn(100);">Login</button>
+					</div>
+					
+					<label class="popup__check checkbox bounce">
+						<span class="checkbox__in">	
+					        <input type="checkbox" checked>
+							<svg viewBox="0 0 24 24">
+					            <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+					        </svg>
+					    </span>    
+				        <p class="t">By creating an account, you agree with our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></p>
+				    </label>	
+				</div>
+			</div>
+			<div class="popup__foot">
+				Not have an account? <a href="javascript:popup.open('#popup-signup');" class="color-green">Create an account</a>
+			</div>
+		</div>
+		<div class="popup__overlay"></div>
+	</div>
+	<!-- ./ popup-signin -->
+	
+	
+	<div class="popup" id="popup-forgot">
+		<div class="popup__container popup-forgot">
+			<div class="popup__body">	
+				<button type="button" class="btn popup-close" onclick="popup.close('#popup-forgot');"><i class="flaticon-close"></i></button>
+				
+				<div class="popup__title">Forgot password?</div>
+				<div class="popup__subtitle">Don’t worry! It happens. Please enter the address associated with your account.</div>
+				
+				<div class="popup__form">
+					<div class="popup__fields">
+						<div class="popup__inp">
+							<i class="flaticon-at"></i>
+							<input type="email" class="inp" placeholder="Your e-mail or username" />
+						</div>
+					</div>
+					
+					<div class="popup__btn">
+						<div class="loading loading--dark"></div>
+						<button type="button" class="btn btn--blue" onclick="popup.open('#popup-code');">Recover account</button>
+					</div>
+				</div>
+			</div>
+			
+			<div class="popup__foot">
+				Back to <a href="javascript:popup.open('#popup-signin');" class="color-green">Login</a>
+			</div>
+		</div>
+		<div class="popup__overlay"></div>
+	</div>
+	<!-- ./ popup-forgot -->
+	
+	
+	<div class="popup" id="popup-code">
+		<div class="popup__container popup-code">
+			<div class="popup__body">	
+				<button type="button" class="btn popup-close" onclick="popup.close('#popup-code');"><i class="flaticon-close"></i></button>
+				
+				<div class="popup__title">Enter code</div>
+				<div class="popup__subtitle">We sent a 5-digit code to <span class="color-green">per******@g***l.com</span>.<br/> Please enter the code below.</div>
+				
+				<div class="popup__form">
+					<div class="popup__fields">
+						<div class="popup__inp popup__inp--code">
+							<div><input type="number" class="inp" value="6" onKeyPress="if(this.value.length >= 1) return false;" /></div>
+							<div><input type="number" class="inp" value="3" onKeyPress="if(this.value.length >= 1) return false;"/></div>
+							<div><input type="number" class="inp" onKeyPress="if(this.value.length >= 1) return false;"/></div>
+							<div><input type="number" class="inp" onKeyPress="if(this.value.length >= 1) return false;"/></div>
+							<div><input type="number" class="inp" onKeyPress="if(this.value.length >= 1) return false;"/></div>
+						</div>
+					</div>
+					
+					<div class="popup__btn">
+						<div class="loading loading--dark"></div>
+						<button type="button" class="btn btn--blue" onclick="$(this).siblings().fadeIn(100);">Recover account</button>
+					</div>
+				</div>
+			</div>
+			
+			<div class="popup__foot">
+				Back to <a href="javascript:popup.open('#popup-signin');" class="color-green">Login</a>
+			</div>
+		</div>
+		<div class="popup__overlay"></div>
+	</div>
+	<!-- ./ popup-code -->
+	
+	
+	<div class="popup" id="popup-langs">
+		<div class="popup__container popup-langs">
+			<div class="popup__body">
+				<button type="button" class="btn popup-close" onclick="popup.close('#popup-langs');"><i class="flaticon-close"></i></button>
+				
+				<div class="popup__title">Language</div>
+				<div class="popup__subtitle">Choose interface language you prefer</div>
+
+				<div class="plang">
+					<a href="#" class="btn plang__link">
+						<img src="img/f-ru.svg" alt="ru" />
+						<span>Русский</span>
+					</a>
+					<a href="#" class="btn plang__link plang__link--active">
+						<img src="img/f-en.svg" alt="en" />
+						<span>English</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="popup__overlay"></div>
+	</div>
+	
+	
+	<!-- POPUPS END -->
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="js/core.min.js?v=0.02"></script>
+	<script src="js/libs/flip.min.js"></script>
+	<script>
+		//${new Date().getDate() + 1}
+		function handleTickInit(tick) {
+			Tick.count.down(`2022-11-28T00:00:00`, {
+			format: ['h','m','s']
+			}).onupdate = function(value) {
+			tick.value = value;
+			};
+		}
+	</script>
+</body>
+</html>

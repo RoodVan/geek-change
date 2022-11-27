@@ -74,6 +74,10 @@ $flaticon_geekchange-map: (
     "history": "\f133",
     "logout": "\f134",
     "csv": "\f135",
+    "info": "\f136",
+    "warning": "\f137",
+    "check-2": "\f138",
+    "canceled": "\f139",
 );
 
 .flaticon-email:before {
@@ -234,4 +238,16 @@ $flaticon_geekchange-map: (
 }
 .flaticon-csv:before {
     content: map-get($flaticon_geekchange-map, "csv");
+}
+.flaticon-info:before {
+    content: map-get($flaticon_geekchange-map, "info");
+}
+.flaticon-warning:before {
+    content: map-get($flaticon_geekchange-map, "warning");
+}
+.flaticon-check-2:before {
+    content: map-get($flaticon_geekchange-map, "check-2");
+}
+.flaticon-canceled:before {
+    content: map-get($flaticon_geekchange-map, "canceled");
 }
