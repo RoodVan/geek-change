@@ -829,5 +829,13 @@ $(function(){
 	});
 
 	
+	//Copy text
+	$("[data-copy]").on("click", function(){
+		const instance = tippy(this);
+		navigator.clipboard.writeText($(this).attr("data-copy"));
+
+		instance.setContent('Copied 👍');
+		instance.show();
+	});
 
 });

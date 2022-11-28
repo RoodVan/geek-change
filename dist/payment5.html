@@ -93,8 +93,8 @@
 				<div class="payment-row">
 					<div class="payment-left">
 						<div class="payment-box">
-							<div class="payment-box__head">
-								<h3 class="t">Confirming</h3>
+							<div class="payment-box__head _canceled">
+								<h3 class="t"><i class="flaticon-canceled"></i> Order canceled</h3>
 								<p class="i">
 									<span class="t1"><b>Transaction </b>ID:</span>
 									<span class="t2">
@@ -107,22 +107,70 @@
 
 							<div class="payment-box__body">
 
-								<div class="payment-interval">
-									<img src="img/connection.svg" alt="">
-									<p>Payment received, awaiting 3/20 confirms...</p>
+								<div class="payment-desc">
+									<strong>The order was canceled</strong> because time is out. If you’re processed payment, please contact to support.
 								</div>
 
-								<div class="payment-note">
-									<i class="flaticon-info"></i>
-									Send the exact amount without commission. Otherwise, the payment can hang for a long time. We will swap them really fast and at the Best Rate!
-								</div>
+								<div class="pcanceled-box">
+									<div class="pcanceled-list">
 
-								<div class="payment-info">
+										<div class="pcanceled-col">
+											<div class="pcanceled-item">
+												<div class="pcanceled-item__title">
+													<i class="flaticon-check-2"></i> Good request: 
+												</div>
+												<div class="pcanceled-item__txt">
+													Order c0878163-2896-4d62-aac5-5d5420e6c4bd received 2 confirms. Please make the payment!
+												</div>
+											</div>
+										</div>
+
+										<div class="pcanceled-col">
+											<div class="pcanceled-item pcanceled-item--bad">
+												<div class="pcanceled-item__title">
+													<i class="flaticon-canceled"></i> Bad request: 
+												</div>
+												<div class="pcanceled-item__txt">
+													<span>Order is canceled.</span> Where is my money!???? GIVE ME MY MONEY!!1!!1!!
+												</div>
+											</div>
+										</div>
+
+									</div>
+
+									<div class="pcanceled-btns">
+										<a class="btn btn--blue">Live Chat</a>
+										<a href="#" class="btn btn--line">Create Ticket</a>
+									</div>
+								</div>
+								<!-- ./ pcanceled-box -->
+
+								<div class="payment-res">
 									<ul class="payment-pilist">
 										<li>
-											<span class="l">You will receive:</span>
+											<span class="l">You give:</span>
 											<p class="v">
-												1 784.33 USDT
+												<strong>1.2</strong> ETH
+											</p>
+										</li>
+										<li>
+											<span class="l">To:</span>
+											<p class="v">
+												<b>0x624TeFYLWYTsVaeMBG4GEz2MPmJ4eN43</b>
+												<i class="flaticon-copy" data-copy="0x624TeFYLWYTsVaeMBG4GEz2MPmJ4eN43"></i>
+											</p>
+										</li>
+										<li>
+											<span class="l">Network:</span>
+											<span class="xmark">ERC20</span>
+										</li>
+									</ul>
+
+									<ul class="payment-pilist">
+										<li>
+											<span class="l">You receive:</span>
+											<p class="v">
+												<strong>1 784.33</strong> USDT
 												<i class="flaticon-warning" data-tippy-content="
 												<p>Изначальный курс: <strong class='color-green'>1 ETH : 1500 USDT</strong></p>
 												<p>Скорректированный курс: <strong class='color-green'>1 ETH : 1560 USDT</strong></p>
@@ -133,51 +181,30 @@
 											</p>
 										</li>
 										<li>
-											<span class="l">Your address:</span>
-											<p class="v">TEaC4TeFYLWYTsVaeMBG4GEz2MPmJ4eN43</p>
+											<span class="l">To:</span>
+											<p class="v">
+												<b>TEaC4TeFYLWYTsVaeMBG4GEz2MPmJ4eN43</b>
+												<i class="flaticon-copy" data-copy="TEaC4TeFYLWYTsVaeMBG4GEz2MPmJ4eN43"></i>
+											</p>
 										</li>
 										<li>
-											<span class="l">Your network:</span>
-											<p class="v"><b class="xmark">TRC20</b></p>
+											<span class="l">Network:</span>
+											<span class="xmark">ERC20</span>
 										</li>
 									</ul>
 								</div>
+								<!-- ./payment-res -->
 
 							</div>
 							<!-- ./ payment-box__body -->
-
-							<div class="payment-box__foot">
-								<ul class="bns-progress__list payment-progress">
-									<li class="bns-progress__item _completed">
-										<span class="bns-progress__pent"></span>
-										<span class="bns-progress__level">Awaiting Deposit</span>
-										<span class="bns-progress__points">Waiting your payment</span>
-									</li>
-									<li class="bns-progress__item _completed _current">
-										<span class="bns-progress__pent"></span>
-										<span class="bns-progress__level">Confirming</span>
-										<span class="bns-progress__points">0/20 confirms</span>
-									</li>
-									<li class="bns-progress__item">
-										<span class="bns-progress__pent"></span>
-										<span class="bns-progress__level">Sending to you</span>
-										<span class="bns-progress__points">~5-20 minutes</span>
-									</li>
-									<li class="bns-progress__item">
-										<span class="bns-progress__pent"></span>
-										<span class="bns-progress__level">Complete</span>
-										<span class="bns-progress__points">Instantly</span>
-									</li>
-								</ul>
-							</div>
 
 						</div>
 					</div>
 					<!-- ./ payment-left -->
 
-					<div class="payment-right">
+					<div class="payment-right payment-right--mnone">
 
-						<div class="timer-box">
+						<div class="timer-box timer-box--canceled">
 							<div class="tick" data-did-init="handleTickInit">
 								<div data-repeat="true" data-layout="horizontal center fit" data-transform="preset(d, h, m, s) -> delay">							
 									<div class="tick-group">									
@@ -186,12 +213,9 @@
 										</div>							
 									</div>
 								</div>
-							</div>	
-							<div class="mob-timer">
-								02:50:41
 							</div>					
 							<div class="timer-box__label">
-								Time left to send 1.2 ETH
+								Order caneled
 							</div>
 						</div>
 

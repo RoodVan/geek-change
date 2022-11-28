@@ -94,36 +94,22 @@
 					<div class="payment-left">
 						<div class="payment-box">
 							<div class="payment-box__head">
-								<h3 class="t">Awaiting Deposit</h3>
+								<h3 class="t">Confirming</h3>
 								<p class="i">
-									<span class="t1">Transaction ID:</span>
-									<span class="t2 js-copy-id">c0878163-2896-4d62-aac5-5d5420e6c4bd</span>
-									<i class="flaticon-copy" onclick="copyText('.js-copy-id', 'Copied', 1)"></i>
+									<span class="t1"><b>Transaction </b>ID:</span>
+									<span class="t2">
+										c0878163-2896-4d62-aac5-5d5420e6c4bd
+										<i class="flaticon-copy" data-copy="c0878163-2896-4d62-aac5-5d5420e6c4bd"></i>
+									</span>
+									
 								</p>
 							</div>
 
 							<div class="payment-box__body">
 
-								<div class="payment-info space">
-									<ul class="payment-pilist">
-										<li>
-											<span class="l">Send in a single transaction:</span>
-											<span class="v">1.2 ETH</span>
-											<i class="flaticon-copy"></i>
-										</li>
-										<li>
-											<span class="l">To this address:</span>
-											<span class="v">0x62ef7a17A002581463dEFd6782Ad7728e1b1B64F</span>
-											<i class="flaticon-copy"></i>
-										</li>
-										<li>
-											<span class="l">Network:</span>
-											<span class="v"><b class="xmark">ERC20</b></span>
-										</li>
-									</ul>
-									<div class="payment-piqrcode">
-										<img src="img/qrcode.jpg" alt="qrcode">
-									</div>
+								<div class="payment-interval">
+									<img src="img/connection.svg" alt="">
+									<p>Payment received, awaiting 3/20 confirms...</p>
 								</div>
 
 								<div class="payment-note">
@@ -131,26 +117,28 @@
 									Send the exact amount without commission. Otherwise, the payment can hang for a long time. We will swap them really fast and at the Best Rate!
 								</div>
 
-								<div class="payment-info small">
+								<div class="payment-info">
 									<ul class="payment-pilist">
 										<li>
 											<span class="l">You will receive:</span>
-											<span class="v">1 784.33 USDT</span>
-											<i class="flaticon-warning" data-tippy-content="
-											<p>Изначальный курс: <strong class='color-green'>1 ETH : 1500 USDT</strong></p>
-											<p>Скорректированный курс: <strong class='color-green'>1 ETH : 1560 USDT</strong></p>
-											<p>Время обновления: 11 Feb 2023, 14:05</p>
-											<p>----</p>
-											<p>Так как вы выбрали тип обмена “Лучший курс”, то курс в заявке обновляется раз в 5 минут при сильных колебаниях на рынке.</p>
-											"></i>
+											<p class="v">
+												1 784.33 USDT
+												<i class="flaticon-warning" data-tippy-content="
+												<p>Изначальный курс: <strong class='color-green'>1 ETH : 1500 USDT</strong></p>
+												<p>Скорректированный курс: <strong class='color-green'>1 ETH : 1560 USDT</strong></p>
+												<p>Время обновления: 11 Feb 2023, 14:05</p>
+												<p>----</p>
+												<p>Так как вы выбрали тип обмена “Лучший курс”, то курс в заявке обновляется раз в 5 минут при сильных колебаниях на рынке.</p>
+												"></i>
+											</p>
 										</li>
 										<li>
 											<span class="l">Your address:</span>
-											<span class="v">TEaC4TeFYLWYTsVaeMBG4GEz2MPmJ4eN43</span>
+											<p class="v">TEaC4TeFYLWYTsVaeMBG4GEz2MPmJ4eN43</p>
 										</li>
 										<li>
 											<span class="l">Your network:</span>
-											<span class="v"><b class="xmark">TRC20</b></span>
+											<p class="v"><b class="xmark">TRC20</b></p>
 										</li>
 									</ul>
 								</div>
@@ -159,7 +147,28 @@
 							<!-- ./ payment-box__body -->
 
 							<div class="payment-box__foot">
-								foot
+								<ul class="bns-progress__list payment-progress">
+									<li class="bns-progress__item _completed">
+										<span class="bns-progress__pent"></span>
+										<span class="bns-progress__level">Awaiting Deposit</span>
+										<span class="bns-progress__points">Waiting your payment</span>
+									</li>
+									<li class="bns-progress__item _completed _current">
+										<span class="bns-progress__pent"></span>
+										<span class="bns-progress__level">Confirming</span>
+										<span class="bns-progress__points">0/20 confirms</span>
+									</li>
+									<li class="bns-progress__item">
+										<span class="bns-progress__pent"></span>
+										<span class="bns-progress__level">Sending to you</span>
+										<span class="bns-progress__points">~5-20 minutes</span>
+									</li>
+									<li class="bns-progress__item">
+										<span class="bns-progress__pent"></span>
+										<span class="bns-progress__level">Complete</span>
+										<span class="bns-progress__points">Instantly</span>
+									</li>
+								</ul>
 							</div>
 
 						</div>
@@ -177,7 +186,10 @@
 										</div>							
 									</div>
 								</div>
-							</div>							
+							</div>	
+							<div class="mob-timer">
+								02:50:41
+							</div>					
 							<div class="timer-box__label">
 								Time left to send 1.2 ETH
 							</div>
