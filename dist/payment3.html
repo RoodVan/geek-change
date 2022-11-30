@@ -21,7 +21,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
 	
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.min.css?v=0.1">
+	<link rel="stylesheet" href="css/style.min.css?v=0.003">
 
 </head>
 <body>
@@ -588,13 +588,12 @@
 	<!-- POPUPS END -->
 	
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="js/libs/jquery.min.js"></script>
 	<script src="js/core.min.js?v=0.02"></script>
 	<script src="js/libs/flip.min.js"></script>
 	<script>
-		//${new Date().getDate() + 1}
 		function handleTickInit(tick) {
-			Tick.count.down(`2022-11-28T00:00:00`, {
+			Tick.count.down(`2022-12-0${new Date().getDate() + 1}T00:00:00`, {
 			format: ['h','m','s']
 			}).onupdate = function(value) {
 			tick.value = value;

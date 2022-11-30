@@ -626,8 +626,14 @@
 	.m-top50{
 		margin-top: 50px !important;
 	}
+	.m-top5{
+		margin-top: 5px !important;
+	}
 	.m-top10{
 		margin-top: 10px !important;
+	}
+	.m-top20{
+		margin-top: 20px !important;
 	}
 	.m-top35{
 		margin-top: 35px !important;
@@ -4676,6 +4682,7 @@
 			display: flex;
 		}
 		&-item{
+			flex: 0 1 auto;
 			background: #F5F7FB;
 			border-radius: 6px;
 			padding: 10px 15px;
@@ -4685,6 +4692,12 @@
 			display: flex;
 			align-items: center;
 			margin-right: 15px;
+			cursor: pointer;
+			position: relative;
+			transition: all .2s ease-in-out;
+			&:hover{
+				background: darken(#F5F7FB, 3%);
+			}
 			i{
 				display: flex;
 				align-items: center;
@@ -4693,6 +4706,47 @@
 				font-size: 14px;
 				&.flaticon-soc-tg{
 					font-size: 17px;
+				}
+			}
+
+			&.active{
+				cursor: default;
+				background: #FEFEFE;
+				border: 1px solid #60CC80;
+				&:hover{
+					background: #FEFEFE;
+				}
+			}
+
+			.flaticon-canceled{
+				position: absolute;
+				color: #EC5F40;
+				border-radius: 100px;
+				background-color: #FEFEFE;
+				cursor: pointer;
+				width: 20px;
+				height: 20px;
+				font-size: 20px;
+				top: -10px; right: -10px;
+				margin-right: 0;
+				transition: all .2s ease-in-out;
+				&:hover{
+					color: darken(#EC5F40, 3%);
+				}
+			}
+		}
+
+		@media screen and (max-width: 580px) {
+			&-list{
+				flex-direction: column;
+				align-items: center;
+			}
+			&-item{
+				margin-right: 0;
+				margin-bottom: 20px;
+				flex: auto;
+				&:last-child{
+					margin-bottom: 0;
 				}
 			}
 		}
@@ -5580,6 +5634,7 @@
 				flex: 0 0 200px;
 				max-width: 200px;
 				margin-right: 10px;
+				height: 48px;
 				&--blue{
 					color: #FEFEFE;
 					&:hover{

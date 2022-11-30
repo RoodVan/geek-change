@@ -399,7 +399,9 @@ function xslider(opt){
 	const dots = $(opt.dots);
 			
 	items.css("width", `${sliderWrap.width() || sliderWrap.innerWidth}px`);
-	$(window).on("resize", () => items.css("width", `${sliderWrap.width() || sliderWrap.innerWidth}px`));
+	$(window).on("resize", debounce(function(e){
+		items.css("width", `${sliderWrap.width() || sliderWrap.innerWidth}px`)
+	}));
 	slider.css("transform", "translateX(0)");
 	
 	//counter
@@ -475,17 +477,19 @@ function Popup(){
 			$(".wrapper").addClass("blur");
 		});
 		
-		$(window).on("resize", function() {
-			let w = window.innerWidth > 0 ? window.innerWidth : screen.width;
-			let h = window.innerHeight > 0 ? window.innerHeight : screen.height;
-			let ph = $(`${id} .popup__container`).innerHeight();
-			
-			if( (w <= 992) || (ph > h) ){
-				$(document.body).find(`${id} .popup__container`).css({ "transform":"translate(-50%,0%)", "top": "30px" });
-			} else {
-				$(document.body).find(`${id} .popup__container`).css({ "transform":"translate(-50%,-50%)", "top": "50%" });
-			}		
-		});	
+		$(window).on("resize", debounce(
+			function() {
+				let w = window.innerWidth > 0 ? window.innerWidth : screen.width;
+				let h = window.innerHeight > 0 ? window.innerHeight : screen.height;
+				let ph = $(`${id} .popup__container`).innerHeight();
+				
+				if( (w <= 992) || (ph > h) ){
+					$(document.body).find(`${id} .popup__container`).css({ "transform":"translate(-50%,0%)", "top": "30px" });
+				} else {
+					$(document.body).find(`${id} .popup__container`).css({ "transform":"translate(-50%,-50%)", "top": "50%" });
+				}		
+			}
+		));	
 	}	
 	
 	this.close = function(id){
@@ -581,11 +585,338 @@ function copyText(input,text,flag=false) {
   }
 
 
+  //Short timer
+  function countdown_short(time, elm) {
+	
+	time--;
+	time = (time < 0) ? 0 : time;
+	
+	var hours = parseInt(time / 3600);
+	var t = (time % 3600);
+	
+	var minutes = parseInt(t / 60);
+	t = (t % 60);
+	
+	var seconds = parseInt(t);
+	
+	$(elm).html(`${addZero(minutes)}:${addZero(seconds)}`);
+	
+	var t = setTimeout(function(){ countdown_short(time, elm); }, 1000);	
+}
+
+
+// Validate number
+function validateNumber(event) {
+	var key = window.event ? event.keyCode : event.which;
+	
+		if (key == 44) {
+			this.value = this.value.replace(',','.');
+		}
+		else {
+			if (event.keyCode === 8 || event.keyCode === 46) {
+				return true;
+			} else if ( key < 48 || key > 57 ) {
+				return false;
+			} else {
+				return true;
+			}
+		}
+};
+
+
+//Exchange steps
+function exStep(index){
+	$(".excform").find(".excform-box").fadeOut(0);
+	$(".excform").find(`.excform-box[data-step="${index}"]`).fadeIn(0);
+
+}
+
+
+//Debounce
+function debounce(func) {
+	let timer;
+	return function (event) {
+		if (timer) clearTimeout(timer);
+		timer = setTimeout(func, 100, event);
+	};
+}
+
+
+//correct_layout
+function correct_layout(str, rev) {
+	var replacer = {
+		'q': 'й', 'w': 'ц', 'e': 'у', 'r': 'к', 't': 'е', 'y': 'н', 'u': 'г',
+		'i': 'ш', 'o': 'щ', 'p': 'з', '[': 'х', ']': 'ъ', 'a': 'ф', 's': 'ы',
+		'd': 'в', 'f': 'а', 'g': 'п', 'h': 'р', 'j': 'о', 'k': 'л', 'l': 'д',
+		';': 'ж', '\'': 'э', 'z': 'я', 'x': 'ч', 'c': 'с', 'v': 'м', 'b': 'и',
+		'n': 'т', 'm': 'ь', ',': 'б', '.': 'ю', '/': '.', '`': 'ё'
+	};
+	if (rev) {
+		var rev_replacer = {};
+		for (var key in replacer) rev_replacer[replacer[key]] = key;
+		replacer = rev_replacer;
+	}
+	return str.replace(/./g, function (found) {
+	if (replacer[found]) return replacer[found];
+		return found;
+	});
+}
+//translit
+function translit(str, replacer) {
+	
+	if (str == '') return '';
+	
+	if (replacer == 'ru') {
+		replacer = {
+			'zh': 'ж', 'eo': 'ё', 'ts': 'ц', 'sh': 'ш', 'shch': 'щ', 'ch': 'ч', 'je': 'е',
+			'yu': 'ю', 'ya': 'я', 'th': 'ф|т|з', 'ee': 'и',
+			'a': 'а', 'b': 'б', 'c': 'с|ц|к', 'v': 'в', 'g': 'г', 'd': 'д', 'e': 'е|э', 'z': 'з',
+			'j': 'й', 'k': 'к', 'l': 'л', 'm': 'м', 'n': 'н', 'o': 'о', 'p': 'п', 'r': 'р',
+			's': 'с', 't': 'т', 'u': 'у', 'f': 'ф', 'h': 'х', 'y': 'й|и', 'i': 'и', 'w': 'в',
+			'q': 'к', 'x': 'кс'
+		};
+	}
+	else if (replacer == 'en') {
+		replacer = {
+			'кс': 'x',
+			'а': 'a', 'б': 'b', 'в': 'v|w', 'г': 'g', 'д': 'd', 'е': 'e|a', 'з': 'z|th|s', 'и': 'i|e',
+			'й': 'j|i|y', 'к': 'k|q|c', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p', 'р': 'r',
+			'с': 's', 'т': 't', 'у': 'u', 'ф': 'f|th', 'х': 'h', 'ц': 'c', 'ы': 'y', 'э': 'e|a',
+			'ш': 'sh', 'я': 'ya', 'ё': 'e|yo', 'ж': 'zh', 'ю': 'yu|u', 'ч': 'ch', 'щ': 'shch'
+		};
+	}
+	
+	
+	var template = '';
+	for (var key in replacer) template += (template !== '' ? '|' : '') + key;
+	var replacer_reg = new RegExp(template, 'g');
+	
+	var variants = [str];
+	var i = 0;
+	while (true) {
+	if (variants[i] !== undefined) {
+		  variants[i] = variants[i].replace(replacer_reg, function (key) {
+		var synonyms = replacer[key].split('|');
+		for (var j = 0; j < synonyms.length; j++) {
+		  if (j == synonyms.length - 1) return synonyms[j];
+			  variants.push(variants[i].replace(new RegExp(key, 'g'), synonyms[j]));
+		}
+	  });
+	}
+	i++;
+	if (i == variants.length) break;
+	}
+	return variants;
+}
+
+
+//Select
+class Eselect {
+	constructor(selector, data, cb) {
+		this.$el = document.querySelector(selector);	
+		this.selector = selector;	
+		this.$optionsList = this.$el.querySelector('.exselect-options');
+		this.$btn = this.$el.querySelector('.exselect-btn');
+		this.$search = this.$el.querySelector('.exselect-search-inp');		
+		this.cb = cb || null;
+
+		this.emptyTemp = `
+			<li class="exselect-item--empty">
+				<img src="img/exselect-empty.svg" alt="empty">
+				<p>Sorry, we did not find anything</p>
+			</li>`;
+
+		this.data = data;
+		this.dataPopular = data.filter((obj) => obj.popular);
+		this.dataAll = data.filter((obj) => !obj.popular);
+
+		this._render();
+		this._addEvents();		
+	}
+
+	_render(){
+		let optionsPop = this.dataPopular.map((item) => this._createLi(item)).join('');
+		let optionsAll = this.dataAll.map((item) => this._createLi(item)).join('');
+
+		this.$optionsList.innerHTML = `
+			<li class="exselect-item--caption" data-popular-caption>Popular Currencies</li>
+			${optionsPop}
+			<li class="exselect-item--caption" data-all-caption>All currencies</li>
+			${optionsAll}
+			${this.emptyTemp}
+		`;
+	}
+
+	_createLi(item){
+		return `
+			<li class="exselect-item" 
+				data-id="${item.take}"
+				data-pop="${item.popular ? 1 : 0}"
+				data-all="${!item.popular ? 1 : 0}"
+				data-name="${item.take_name}"
+				data-ticker="${item.take_ticker}" 
+				data-currency="${item.take_currency}" 
+				data-icon="${item.take_icon}"
+				data-reserve="${item.reserve}">
+				
+					<img src="https://avanchange.net/${item.take_icon}" class="icon" alt=${item.take_name}">
+					<span>
+						<strong>${item.take_name} ${item.mark ? `<b class="xmark">${item.mark}</b>` : ''}</strong>
+						<small>${item.take_ticker}</small>
+					</span>
+
+				</li>
+		`;
+	}
+
+	_addEvents(){
+		this.$btn.addEventListener("click", (event) => {
+			this.toggle();
+		});
+
+		this.$el.querySelector("[data-close]").addEventListener("click", () => {
+			this.close();
+		});
+
+		const _this = this;
+		this.$optionsList.querySelectorAll("li").forEach((li) => {
+			if(!li.classList.contains("exselect-item")) return;
+			
+			li.addEventListener("click", function(e){
+				const id = this.dataset.id;
+				_this.selected(id);
+			});
+		});
+
+		document.addEventListener("click", (e) => {
+			if(!e.target.closest(`${this.selector}`)){
+				this.close();
+			}
+		});
+	}
+
+	renderBtn(obj){
+		this.$btn.querySelector(".exselect-btn__icon").innerHTML = `<img src="https://avanchange.net/${obj.take_icon}" alt="${obj.take_name}">`;
+		this.$btn.querySelector(".exselect-btn__currency").innerHTML = `<small>${obj.take_name}</small><strong>${obj.take_currency}</strong>`;
+		
+		if(this.$btn.querySelector(".xmark"))
+			this.$btn.querySelector(".xmark").remove();
+
+		if(obj.mark)
+			this.$btn.insertAdjacentHTML("afterbegin",`<b class="xmark">${obj.mark}</b>`);		
+	}
+
+	selected(id){
+		const selectedObj = this.data.find((obj) => obj.take == id);
+		this.renderBtn(selectedObj);
+
+		this.$optionsList.querySelectorAll("li").forEach((li) => {
+			li.classList.remove("selected");
+		});
+		this.$optionsList.querySelector(`[data-id="${id}"]`).classList.add("selected");
+
+		this.cb ? this.cb(selectedObj) : null;
+		this.close();
+	}
+
+	search(){
+		this.$search.addEventListener("keyup", (e) => {
+			let query = e.target.value;
+			let query_ru		= translit(query, 'ru');
+			let query_en		= translit(query, 'en');
+			let query_lt_r1		= correct_layout(query, false);
+			let query_lt_e1		= correct_layout(query, true);
+			let query_lt_r2		= translit(query_lt_r1, 'ru');
+			let query_lt_e2		= translit(query_lt_e1, 'en');
+			let total 			= 0;
+			let hasPop 			= 0;
+			let hasAll 			= 0;
+			let queries			= [query];
+			const query_uid 	= [];
+
+			//list of alternative queries
+			queries = queries.concat(query_ru);
+			queries = queries.concat(query_en);
+			queries = queries.concat(query_lt_r1);
+			queries = queries.concat(query_lt_e1);
+			queries = queries.concat(query_lt_r2);
+			queries = queries.concat(query_lt_e2);
+						
+			//Filter duplicates
+			queries = queries.filter(element => { 
+				if (!query_uid.includes(element)) {
+					query_uid.push(element);
+					return true;
+				}
+				return false;
+			});
+
+
+			this.$optionsList.querySelectorAll("li.exselect-item").forEach((li) => {
+				let show = false;
+
+				queries.forEach((q, index) => {
+					if(
+						li.querySelector("strong").innerText.search(new RegExp(q, "i")) >= 0 ||
+						li.querySelector("small").innerText.search(new RegExp(q, "i")) >= 0
+					){
+						hasPop += +li.dataset.pop;
+						hasAll += +li.dataset.all;
+						show = true;
+						return;
+					}
+				});
+
+				if(show){
+					li.style.display = "flex";
+					total++;
+				} else {
+					li.style.display = "none";
+				}
+			});
+
+			hasPop
+			? this.$optionsList.querySelector("[data-popular-caption]").style.display = "block"
+			: this.$optionsList.querySelector("[data-popular-caption]").style.display = "none";
+
+			hasAll
+			? this.$optionsList.querySelector("[data-all-caption]").style.display = "block"
+			: this.$optionsList.querySelector("[data-all-caption]").style.display = "none";
+
+			total 
+			? this.$optionsList.querySelector(".exselect-item--empty").style.display = "none"
+			: this.$optionsList.querySelector(".exselect-item--empty").style.display = "block";
+
+		});
+	}
+
+	toggle(){
+		return this.$el.classList.contains('open')
+		? this.close()
+		: this.open();
+	}
+
+	open(){
+		this.$el.classList.add("open");
+		this.$search.focus();
+		this.search();
+	}
+
+	close(){
+		this.$el.classList.remove("open");
+		this.$search.value = "";
+		this.$optionsList.querySelectorAll("li.exselect-item").forEach(li => {
+			li.style.display = "flex";
+		});
+		this.$optionsList.querySelector(".exselect-item--empty").style.display = "none";		
+	}
+}
+
 
 /* Onload DOM                                        
 --------------------------------------------------------*/
 $(function(){
-		
+
 	//Mob. menu
 	$(".js-menu-mob").on("click", function(){
 		$("body").toggleClass("menu--open");
@@ -625,7 +956,9 @@ $(function(){
 			dots: ".hreviews__dots"			
 		}
 		xslider(sliderOpt);
-		$(window).on("resize", e => xslider(sliderOpt));
+		$(window).on("resize", debounce(
+			e => xslider(sliderOpt)
+		));
 	}
 	
 	
@@ -837,5 +1170,154 @@ $(function(){
 		instance.setContent('Copied 👍');
 		instance.show();
 	});
+
+
+	//Exchange form timer
+	countdown_short(60, '.js-short-timer');
+
+
+	//Validate number
+	$("[data-validate-number]").on("keypress", validateNumber);
+
+
+
+
+
+	//Select object
+	const selectSendObj = [
+		{
+			"take": "5",
+			"take_currency": "RUB",
+			"give_code": "SBERRUB",
+			"take_code": "TCSBRUB",
+			"take_name": "Тинькофф",
+			"take_ticker": "TCSBRUB",
+			"reserve": 5350299,
+			"take_icon": "/uploads/images/payment/tinkoff-small.svg",
+			"popular": false
+		  },
+		  {
+			"take": "11",
+			"take_currency": "RUB",
+			"give_code": "SBERRUB",
+			"take_code": "CARDRUB",
+			"take_name": "VISA/MasterCard",
+			"take_ticker": "CARDRUB",
+			"reserve": 5849994,
+			"take_icon": "/uploads/images/payment/cards-small.svg",
+			"popular": false
+		  },
+		  {
+			"take": "12",
+			"take_currency": "UAH",
+			"give_code": "SBERRUB",
+			"take_code": "CARDUAH",
+			"take_name": "VISA/MasterCard",
+			"take_ticker": "CARDUAH",
+			"reserve": 454448,
+			"take_icon": "/uploads/images/payment/cards-small.svg",
+			"mark": "erc20",
+			"popular": false
+		  },
+		  {
+			"take": "2",
+			"take_currency": "UAH",
+			"give_code": "SBERRUB",
+			"take_code": "P24UAH",
+			"take_name": "Приват24",
+			"take_ticker": "P24UAH",
+			"reserve": 2120134,
+			"take_icon": "/uploads/images/payment/privat24-small.svg",
+			"mark": "trc20",
+			"popular": false
+		  },
+		  {
+			"take": "59",
+			"take_currency": "USDT",
+			"give_code": "TCSBRUB",
+			"take_code": "P24UAH",
+			"take_name": "USDT TRC20",
+			"take_ticker": "USDTTRC20",
+			"reserve": 638260,
+			"take_icon": "/uploads/images/payment/tether-small.svg",
+			"popular": true
+		  },
+		  {
+			"take": "8",
+			"take_currency": "BTC",
+			"give_code": "SBERRUB",
+			"take_code": "BTC",
+			"take_name": "Bitcoin",
+			"take_ticker": "BTC",
+			"reserve": 15.39,
+			"take_icon": "/uploads/images/payment/bitcoin-small.svg",
+			"popular": true
+		  },
+		  {
+			"take": "66",
+			"take_currency": "BUSD",
+			"give_code": "SBERRUB",
+			"take_code": "BUSD",
+			"take_name": "Binance USD",
+			"take_ticker": "BUSD",
+			"reserve": 143939,
+			"take_icon": "/uploads/images/payment/busd-small.svg",
+			"mark": "trc20",
+			"popular": true
+		  },
+		  {
+			"take": "67",
+			"take_currency": "USDT",
+			"give_code": "SBERRUB",
+			"take_code": "USDTBEP20",
+			"take_name": "USDT BEP20",
+			"take_ticker": "USDTBEP20",
+			"reserve": 195219,
+			"take_icon": "/uploads/images/payment/tether-small.svg",
+			"popular": false
+		  },
+		  {
+			"take": "71",
+			"take_currency": "ZEC",
+			"give_code": "SBERRUB",
+			"take_code": "ZEC",
+			"take_name": "Zcash",
+			"take_ticker": "ZEC",
+			"reserve": 10178,
+			"take_icon": "/uploads/images/payment/zec-small.svg",
+			"popular": false
+		  },
+		  {
+			"take": "74",
+			"take_currency": "WAVES",
+			"give_code": "SBERRUB",
+			"take_code": "WAVES",
+			"take_name": "Waves",
+			"take_ticker": "WAVES",
+			"reserve": 20287,			
+			"take_icon": "/uploads/images/payment/waves-small.svg",
+			"mark": "erc20",
+			"popular": false
+		  },
+	];
+
+	//select send
+	const selectSendCb = function(obj){
+		console.log(obj);
+	}
+	if($("#sel-send").length){
+		const selectSend = new Eselect("#sel-send", selectSendObj, selectSendCb);
+		selectSend.selected(8);
+	}
+
+	//select get
+	const selectGetCb = function(obj){
+		console.log(obj);
+	}
+	if($("#sel-get").length){
+		const selectGet = new Eselect("#sel-get", selectSendObj, selectGetCb);
+		selectGet.selected(12);
+	}
+	
 
 });

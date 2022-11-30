@@ -21,7 +21,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
 	
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.min.css?v=0.1">
+	<link rel="stylesheet" href="css/style.min.css?v=0.003">
 
 </head>
 <body>
@@ -102,8 +102,290 @@
 					</div>
 					
 					<div class="excform">
-						Exchange Form
+						
+						<div class="excform-box" data-step="1">
+							<div class="excform-top">
+								<div class="excform-rates">
+									<button class="btn btn--rate active">
+										<i class="flaticon-unlock"></i>
+										<span>Floating rate</span>
+									</button>
+									<button class="btn btn--rate">
+										<i class="flaticon-lock"></i>
+										<span>Fixed rate</span>
+									</button>
+									<i class="flaticon-faq-1" data-tippy-content="info"></i>
+								</div>
+
+								<div class="excform-timer">
+									<strong class="js-short-timer">00:59</strong>
+									<span>Rate is relevant for</span>
+								</div>
+							</div>
+
+							<div class="exselect m-top5" id="sel-send">
+								<div class="exselect-label">
+									<div class="exselect-inp">										
+										<input type="text" id="exc-send" data-validate-number required value="0.1">
+										<label for="exc-send">You send</label>
+									</div>
+
+									<button class="btn exselect-btn">
+										<span class="exselect-btn__icon"></span>
+										<span class="exselect-btn__currency"></span>
+										<i class="flaticon-arr-down"></i>
+									</button>
+								</div>
+
+								<div class="exselect-dropdown">
+									<div class="exselect-search">
+										<i class="flaticon-search"></i>
+										<input type="text" class="exselect-search-inp" placeholder="Type a currency or ticker">	
+										<i class="flaticon-arr-up" data-close></i>									
+									</div>
+
+									<div class="exselect-list">										
+										<ul class="exselect-options"></ul>
+									</div>
+
+								</div>
+							</div>
+							<!-- ./ exselect -->
+
+							<div class="exselect-info">
+								<p>
+									<strong>1</strong> BTC ≈ <strong>19009.16</strong> USDT20 • All fees 
+									<span class="lin" data-tippy-content="
+									<p>Exchange fee: <span class='color-green'>0.25%</span></p>
+									<p>Additional fee: <span class='color-green'>0.001 ETH</span></p>
+									<p>Estimated arrival: <span class='color-green'>5-60 minutes</span></p>
+									<p>—</p>
+									<p>You’re select «Floating rate», Your amount could change depending on the market conditions.</p>
+									">included</span>
+								</p>
+								<span class="exselect-reload">
+									<i class="flaticon-reload"></i>	
+								</span>
+							</div>
+
+							<div class="exselect" id="sel-get">
+								<div class="exselect-label">
+									<div class="exselect-inp">										
+										<input type="text" id="exc-get" data-validate-number required value="1900.91">
+										<label for="exc-get">You get</label>
+									</div>
+
+									<button class="btn exselect-btn">
+										<span class="exselect-btn__icon"></span>
+										<span class="exselect-btn__currency"></span>
+										<i class="flaticon-arr-down"></i>
+									</button>
+								</div>
+
+								<div class="exselect-dropdown">
+									<div class="exselect-search">
+										<i class="flaticon-search"></i>
+										<input type="text" class="exselect-search-inp" placeholder="Type a currency or ticker">	
+										<i class="flaticon-arr-up" data-close></i>									
+									</div>
+
+									<div class="exselect-list">										
+										<ul class="exselect-options"></ul>
+									</div>
+
+								</div>
+							</div>
+							<!-- ./ exselect -->
+								
+							<div class="excform-foot">
+								<button class="btn btn--green" onclick="exStep(2);">Exchange now</button>
+								<label class="popup__check checkbox bounce">
+									<span class="checkbox__in">	
+										<input type="checkbox" checked>
+										<svg viewBox="0 0 24 24">
+											<polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+										</svg>
+									</span>    
+									<p class="t">I agree with <a href="#">Terms of Use</a>, <a href="#">Privacy Policy</a> and <a href="#">AML/KYC</a></p>
+								</label>	
+							</div>
+
+						</div>
+						<!-- ./ excform-box[step=1] -->
+
+						<div class="excform-box" data-step="2">
+							<div class="excform-top">
+								<button class="btn btn--back" onclick="exStep(1);">
+									<i class="flaticon-arr-left"></i>
+									GO BACK
+								</button>
+
+								<div class="excform-timer">
+									<strong class="js-short-timer">00:59</strong>
+									<span>Rate is relevant for</span>
+								</div>
+
+								<span class="excform-progress">
+									<span style="width: 33.3333%;"></span>
+								</span>
+							</div>
+
+							<div class="excform-changed">
+								<div class="excform-changed__item">
+									<small>You sent</small>
+									<span><strong>0.1</strong> BTC</span>
+									<p>
+										<img src="img/picons/bitcoin.svg" alt="">
+										Bitcoin
+										<b class="xmark">BTC</b>
+									</p>
+								</div>
+
+								<div class="excform-changed__item">
+									<small>You get <i class="flaticon-unlock"></i></small>
+									<span><strong>4 371</strong> XRP</span>
+									<p>
+										<img src="img/picons/xrp-30.svg" alt="">
+										XRP
+									</p>
+								</div>
+							</div>
+
+							<div class="excform-note">
+								<i class="flaticon-info"></i>							
+								<strong>Please do not forget</strong> to paste the XRP destination tag provided by your wallet. If the tag is required by your wallet yet is missing in your recipient data, your Ripples will not be delivered.
+							</div>
+
+							<div class="eform">
+								<div class="eform-field">
+									<input type="text" id="recipient-address" class="eform-inp" placeholder="Enter your XRP recipient address">
+									<label for="recipient-address" class="not-up">Recipient address</label>
+								</div>
+
+								<div class="eform-field">
+									<i class="flaticon-info" data-tippy-content="
+									Please specify the Destination Tag for your XRP receiving address if your wallet provides it. Your transaction will not go through if you omit it. If your wallet doesn’t require a Destination Tag, remove the tick.
+									"></i>
+									<input type="text" id="destination-tag" class="eform-inp" placeholder="Enter destination tag">
+									<label for="destination-tag" class="not-up">Destination Tag</label>									
+								</div>
+
+								<div class="eform-field">
+									<input type="text" id="ef-your-name" class="eform-inp" required>
+									<label for="ef-your-name">Your name</label>
+								</div>
+
+								<div class="eform-field">
+									<input type="text" id="ef-your-email" class="eform-inp eform-inp--err" value="jo" required>
+									<label for="ef-your-email">Your E-mail</label>
+									<span class="ierror">Invalid email</span>
+								</div>
+
+								<div class="eform-field">
+									<input type="text" id="ef-your-tg" class="eform-inp" required>
+									<label for="ef-your-tg">Your Telegram</label>
+								</div>
+							</div>
+
+							<div class="excform-foot">
+								<button class="btn btn--green" onclick="exStep(3);">Continue</button>
+							</div>
+
+						</div>
+						<!-- ./ excform-box[step=2] -->
+
+						<div class="excform-box" data-step="3">
+							<div class="excform-top">
+								<button class="btn btn--back" onclick="exStep(2);">
+									<i class="flaticon-arr-left"></i>
+									GO BACK
+								</button>
+
+								<div class="excform-timer">
+									<strong class="js-short-timer">00:59</strong>
+									<span>Rate is relevant for</span>
+								</div>
+
+								<span class="excform-progress">
+									<span style="width: 66.6666%;"></span>
+								</span>
+							</div>
+
+							<div class="excform-changed">
+								<div class="excform-changed__item">
+									<small>You sent</small>
+									<span><strong>0.1</strong> BTC</span>
+									<p>
+										<img src="img/picons/bitcoin.svg" alt="">
+										Bitcoin
+										<b class="xmark">BTC</b>
+									</p>
+								</div>
+
+								<div class="excform-changed__item">
+									<small>You get <i class="flaticon-unlock"></i></small>
+									<span><strong>1 784.33</strong> USD</span>
+									<p>
+										<img src="img/picons/mc.svg" alt="">
+										VISA/MasterCard
+									</p>
+								</div>
+							</div>
+
+							<div class="excform-note">
+								<i class="flaticon-info"></i>							
+								Your order ID: <strong>d56lh6bw6szor6d5</strong> <i class="flaticon-copy" data-copy="d56lh6bw6szor6d5"></i><br/>
+								Please check your information and proceed to payment.
+							</div>
+
+							<ul class="excform-stats">
+								<li>
+									<span class="l">
+										Exchange fee
+										<i class="flaticon-faq-1" data-tippy-content="Exchange fee"></i>
+									</span>
+									<span class="v">0.58%</span>
+								</li>
+								<li>
+									<span class="l">
+										Exchange rate
+										<i class="flaticon-faq-1" data-tippy-content="Exchange rate"></i>
+									</span>
+									<span class="v">1 ETH ~ 1 589 USD</span>
+								</li>
+								<li>
+									<span class="l">
+										Recipient address
+									</span>
+									<span class="v">DThaiidQQeH...6N3BTjXA</span>
+								</li>
+								<li>
+									<span class="l">
+										Processing time
+										<i class="flaticon-faq-1" data-tippy-content="Processing time"></i>
+									</span>
+									<span class="v">~5-60 minutes</span>
+								</li>
+							</ul>
+
+							<div class="excform-foot">
+								<button class="btn btn--green">Confirm & make payment</button>
+								<label class="popup__check checkbox bounce">
+									<span class="checkbox__in">	
+										<input type="checkbox" checked>
+										<svg viewBox="0 0 24 24">
+											<polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+										</svg>
+									</span>    
+									<p class="t">I accept the <a href="#">Terms of Use</a> and <a href="#">AML/KYC</a></p>
+								</label>	
+							</div>
+
+						</div>
+						<!-- ./ excform-box[step=3] -->
+
 					</div>
+					<!-- ./ excform -->
 					
 				</div>
 			</div>
@@ -774,9 +1056,8 @@
 	
 	<!-- POPUPS END -->
 	
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie_light.min.js"></script>
+	<script src="js/libs/jquery.min.js"></script>	
+	<script src="js/libs/lottie_light.min.js"></script>	
 	<script src="js/core.min.js?v=0.02"></script>	
 </body>
 </html>

@@ -29,7 +29,7 @@ function scripts() {
 
 
 function scripts() {
-    return src('app/js/**/*.js', {sourcemaps: false, base: "app/js/"})
+    return src('app/js/*.js', {sourcemaps: false, base: "app/js/"})
     	.pipe(rigger())
     	.pipe(dest('dist/js'))
         .pipe(uglify())
@@ -99,6 +99,11 @@ function fonts_build() {
 		.pipe(dest('dist/fonts'));
 }
 
+function libs_build() {
+	return src('app/js/libs/**/*.js', {sourcemaps: false, base: "app/js/"})
+        .pipe(dest('dist/js'))
+}
+
 function startwatch() {
     watch('app/sass/**/*.scss', styles);
     watch('app/*.html', layouts);
@@ -114,7 +119,7 @@ exports.scripts = scripts;
 exports.images = images;
 exports.layouts = layouts;
 exports.clean = remove_dist;
-exports.build = parallel(styles_build, fonts_build, scripts);
+exports.build = parallel(styles_build, fonts_build, scripts,libs_build);
 exports.default = parallel(styles, scripts, browsersync, startwatch, images, layouts);
 
 /*
