@@ -3622,7 +3622,7 @@ header {
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
-        padding-bottom: 72px;
+        padding-bottom: 20px;
     }
 
     .sheader__info {
