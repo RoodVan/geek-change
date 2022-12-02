@@ -8592,6 +8592,19 @@ hr {
     border-radius: 0 10px 10px 0;
 }
 
+.tickets-list td a {
+    color: #121620;
+    text-decoration: none;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    font-weight: 700;
+}
+
+.tickets-list td a:hover {
+    color: #8686EA;
+}
+
 @media screen and (max-width: 1023px) {
     .tickets-list tr {
         display: block;
