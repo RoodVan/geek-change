@@ -1109,7 +1109,8 @@ $(function(){
 	//tippy tooltip
 	tippy('[data-tippy-content]', {
 		allowHTML: true,
-		animation: 'scale'
+		animation: 'scale',
+		duration: 200
     });
 
 
@@ -1319,5 +1320,10 @@ $(function(){
 		selectGet.selected(12);
 	}
 	
+	//Click popup-overlay
+	$(".popup__overlay").on("click", function(){
+		let popupId = $(this).closest('.popup').attr("id");
+		popup.close(`#${popupId}`);
+	});
 
 });
