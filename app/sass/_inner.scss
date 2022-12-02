@@ -1119,6 +1119,7 @@
 				&__info{
 					flex: 0 0 auto;
 					max-width: 100%;
+					width: 100%;
 					margin-right: 0;
 					margin-bottom: 30px;
 				}
@@ -1134,6 +1135,7 @@
 				}
 				&__txt{
 					font-size: 16px;
+					display: none;
 				}
 			}
 			&-form{

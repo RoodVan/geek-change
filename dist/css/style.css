@@ -7659,6 +7659,7 @@ main {
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
         max-width: 100%;
+        width: 100%;
         margin-right: 0;
         margin-bottom: 30px;
     }
@@ -7682,6 +7683,7 @@ main {
 
     .prw-header__txt {
         font-size: 16px;
+        display: none;
     }
 
     .prw-form {
