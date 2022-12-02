@@ -452,6 +452,14 @@ $hover-color: #8686EA;
 		}
 	}
 
+	.br-mob-none{
+		@media screen and (max-width:1023px) {
+			br{
+				display: none;
+			}
+		}
+	}
+
 /* @end */
 
 

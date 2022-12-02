@@ -3173,6 +3173,12 @@ a:hover {
     }
 }
 
+@media screen and (max-width: 1023px) {
+    .br-mob-none br {
+        display: none;
+    }
+}
+
 /* @end */
 /* @Group Header */
 header {
