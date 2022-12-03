@@ -2813,6 +2813,12 @@ body[class*=jconfirm-no-scroll-] {
     color: #8686EA;
 }
 
+.btn--hv-white:hover {
+    background-color: #FEFEFE !important;
+    border: 1px solid #FEFEFE !important;
+    color: #121620 !important;
+}
+
 .inp {
     border: 1px solid #F5F7FB;
     border-radius: 10px;

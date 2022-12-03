@@ -192,6 +192,14 @@ $hover-color: #8686EA;
 				color: $hover-color;
 			}
 		}
+
+		&--hv-white{
+			&:hover{
+				background-color: #FEFEFE !important;
+				border: 1px solid #FEFEFE !important;
+				color: #121620 !important;
+			}
+		}
 	
 	}
 	
